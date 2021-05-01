@@ -7,6 +7,10 @@ public class JiTile extends Tile {
 
 	}
 
+	public Tile prev() {
+		return null;
+	}
+
 	@Override
 	public Tile next() {
 		if(isFanpai())

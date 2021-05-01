@@ -9,9 +9,10 @@ public class State {
 		AFTER_TSUMO=2,
 		DISCARD_TILE=3,
 		END_GAME=4;
+
 	private int phase;
 	private Player turn_player;
-	private Tile prev_discarded;
+	private Tile prev_tile;
 
 	public int change_phase(int next) {
 		return phase = next;
@@ -21,8 +22,8 @@ public class State {
 		return phase;
 	}
 
-	public Tile getPrev_discarded() {
-		return prev_discarded;
+	public Tile getPrev_tile() {
+		return prev_tile;
 	}
 
 	public Player getTurn_player() {

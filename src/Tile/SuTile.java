@@ -8,7 +8,9 @@ public class SuTile extends Tile {
 
 	@Override
 	public Tile next() {
-		return new SuTile(type,(number+1)%10);
+		if(number==9)
+			return null;
+		return new SuTile(type,number+1);
 	}
 
 	@Override
@@ -21,5 +23,12 @@ public class SuTile extends Tile {
 			System.err.printf("SU(%d,%d)",type,number);
 			return "?";
 		}
+	}
+
+	@Override
+	public Tile prev() {
+		if(number==1)
+			return null;
+		return new SuTile(type,number-1);
 	}
 }

@@ -1,7 +1,6 @@
 package Game.Action;
 
 import Game.Player;
-import Tile.Tile;
 
 public class Action {
 	public static final int
@@ -17,23 +16,15 @@ public class Action {
 
 	//アクションの種類(ロン，カンなど)
 	private int type;
-	//打牌用
-	private Tile discarded;
 
 	public int getType() {
 		return type;
-	}
-	public Tile getDiscarded() {
-		return discarded;
 	}
 
 	public Action(int type,Player player){
 		this.type = type;
 	}
 
-	public Action(int type,Player player,Tile discarded){
-		this(type,player);
-		this.discarded = discarded;
-	}
+
 
 }
