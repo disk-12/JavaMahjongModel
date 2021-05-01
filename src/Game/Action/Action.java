@@ -1,19 +1,23 @@
 package Game.Action;
 
+import Game.Player;
 import Tile.Tile;
 
 public class Action {
 	public static final int
-			PON = 0,
-			CHI = 1,
-			KAN = 2,
-			TSUMO = 3,
-			RON = 4,
-			TSUMO_HORA=5,
-			DISCARD = 6,
-			IGNORE = 7;
+			RON = 0,			//ロン
+			NINE_RYUKYOKU = 1,	//９種９牌
+			KAN = 2,			//カン
+			PON = 3,			//ポン
+			CHI = 4,			//チー
+			TSUMO = 5,			//ツモ
+			TSUMO_HORA = 6,		//ツモ和了
+			DISCARD = 7,		//打牌
+			IGNORE = 8;			//無視（何もしない）
 
+	//アクションの種類(ロン，カンなど)
 	private int type;
+	//打牌用
 	private Tile discarded;
 
 	public int getType() {
@@ -23,12 +27,13 @@ public class Action {
 		return discarded;
 	}
 
-	private Action(int type){
+	public Action(int type,Player player){
 		this.type = type;
 	}
 
-	public Action(int type,Tile discarded){
-		this(type);
+	public Action(int type,Player player,Tile discarded){
+		this(type,player);
 		this.discarded = discarded;
 	}
+
 }

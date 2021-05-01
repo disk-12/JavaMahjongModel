@@ -6,11 +6,11 @@ import Tile.Tile;
 
 public class Hand {
 	private ArrayList<Tile> tiles;
-	private ArrayList<Tile> furo_tiles;
+	private ArrayList<Furo> furos;
 
 	public Hand(ArrayList<Tile> tiles) {
 		this.tiles = tiles;
-		furo_tiles = new ArrayList<Tile>();
+		furos = new ArrayList<Furo>();
 	}
 
 	public void add(Tile throwed) {
@@ -60,6 +60,27 @@ public class Hand {
 
 	public ArrayList<Tile> getDiscardable() {
 		return tiles;
+	}
+
+	public boolean in(int n, Tile key) {
+		//tilesにkeyがn個以上あるか判定
+		int c = 0;
+		for(Tile tile:tiles) {
+			if(tile.equals(key)) {
+				c++;
+			}
+		}
+		return c>=n;
+	}
+
+	public boolean hadPoned(Tile key) {
+		//furo_tilesにkeyのポンがあるか
+		for(Furo furo: furos) {
+			if(furo.getType()==Furo.PON&&furo.getTile(0).equals(key)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 
