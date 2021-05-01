@@ -12,7 +12,7 @@ public class State {
 
 	private int phase;
 	private Player turn_player;
-	private Tile prev_discarded;
+	private Tile prev_tile;
 
 	public int change_phase(int next) {
 		return phase = next;
@@ -22,8 +22,8 @@ public class State {
 		return phase;
 	}
 
-	public Tile getPrev_discarded() {
-		return prev_discarded;
+	public Tile getPrev_tile() {
+		return prev_tile;
 	}
 
 	public Player getTurn_player() {
