@@ -32,6 +32,7 @@ public abstract  class Tile {
 	}
 
 	public abstract Tile next();
+	public abstract Tile prev();
 
 	public boolean equals(Tile t) {
 		return this.number == t.number && this.type ==t.type;
@@ -43,5 +44,6 @@ public abstract  class Tile {
 	public boolean is3genpai() {
 		return getType()==JIHAI && HAKU <= getNumber() && getNumber() <= CHUN;
 	}
+
 
 }

@@ -73,6 +73,17 @@ public class Hand {
 		return c>=n;
 	}
 
+	public boolean in(Tile key) {
+		//tilesにkeyがあるか判定
+		int c = 0;
+		for(Tile tile:tiles) {
+			if(tile.equals(key)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public boolean hadPoned(Tile key) {
 		//furo_tilesにkeyのポンがあるか
 		for(Furo furo: furos) {

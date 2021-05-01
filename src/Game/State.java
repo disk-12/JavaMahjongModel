@@ -9,6 +9,7 @@ public class State {
 		AFTER_TSUMO=2,
 		DISCARD_TILE=3,
 		END_GAME=4;
+
 	private int phase;
 	private Player turn_player;
 	private Tile prev_discarded;
