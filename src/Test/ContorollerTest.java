@@ -26,6 +26,7 @@ public class ContorollerTest {
 		ArrayList<Action> selected = new ArrayList<Action>();
 		for(ArrayList<Action> player : player_actions) {
 			selected.add(player.get(0));
+
 		}
 		return selected;
 	}

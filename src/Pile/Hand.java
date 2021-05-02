@@ -7,6 +7,7 @@ import Tile.Tile;
 public class Hand {
 	private ArrayList<Tile> tiles;
 	private ArrayList<Furo> furos;
+	private Tile tsumo;
 
 	public Hand(ArrayList<Tile> tiles) {
 		this.tiles = tiles;
@@ -32,6 +33,11 @@ public class Hand {
 		for(Tile tile:tiles) {
 			ret += tile.toString()+" ";
 		}
+		ret+="|";
+		for(Furo furo:furos) {
+			ret += furo+" ";
+		}
+		ret +=tsumo==null?"":tsumo;
 		return ret;
 	}
 
@@ -92,6 +98,26 @@ public class Hand {
 			}
 		}
 		return false;
+	}
+
+	public void tsumo(Tile tile) {
+		tsumo = tile;
+	}
+
+	public void discard(Tile discarded) {
+		for(int i=0;i<tiles.size();i++) {
+			if(tiles.get(i).equals(discarded)) {
+				tiles.remove(i);
+				break;
+			}
+		}
+	}
+
+	public void pushTsumo() {
+		if(tsumo!=null) {
+			tiles.add(tsumo);
+			tsumo = null;
+		}
 	}
 
 

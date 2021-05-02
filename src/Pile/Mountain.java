@@ -59,4 +59,8 @@ public class Mountain {
 		return ret;
 	}
 
+	public int length() {
+		return tiles.size();
+	}
+
 }
