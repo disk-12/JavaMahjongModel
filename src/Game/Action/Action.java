@@ -16,6 +16,7 @@ public class Action {
 
 	//アクションの種類(ロン，カンなど)
 	private int type;
+	private Player player;
 
 	public int getType() {
 		return type;
@@ -23,6 +24,26 @@ public class Action {
 
 	public Action(int type,Player player){
 		this.type = type;
+		this.player = player;
+	}
+	public Player getPlayer() {
+		return player;
+	}
+
+	public boolean isEnd() {
+		return type == RON||type == TSUMO_HORA||type == NINE_RYUKYOKU;
+	}
+
+	public boolean isFuro() {
+		// TODO 自動生成されたメソッド・スタブ
+		return type == PON||type == CHI||type == KAN;
+	}
+	static private final String[] name = {"RON","99","KAN","PON","CHI","TSUMO","TSUMO_AGARI","DISCARD","IGNORE"};
+	@Override
+	public String toString() {
+
+		// TODO 自動生成されたメソッド・スタブ
+		return name[type];
 	}
 
 
